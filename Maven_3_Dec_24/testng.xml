@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite [
+        <!ELEMENT suite (test)*>
+        <!ATTLIST suite
+                name CDATA #REQUIRED>
+        <!ELEMENT test (classes)*>
+        <!ATTLIST test
+                verbose CDATA #REQUIRED
+                preserve-order CDATA #REQUIRED
+                name CDATA #REQUIRED>
+        <!ELEMENT classes (class)*>
+        <!ELEMENT class (methods)*>
+        <!ATTLIST class
+                name CDATA #REQUIRED>
+        <!ELEMENT methods (include)*>
+        <!ELEMENT include (#PCDATA)>
+        <!ATTLIST include
+                name CDATA #REQUIRED>
+        ]>
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name = "testng.listeners.Transformation"/>
+    </listeners>
+    <test verbose="2" preserve-order="true" name="C:/Users/admin/Desktop/Maven_3_Dec_24">
+        <classes>
+            <class name="assertion.HardAssertExample">
+                <methods>
+                    <include name="verifySauceDemoApplication"/>
+                </methods>
+            </class>
+            <class name="assertion.SoftAssertExample">
+                <methods>
+                    <include name="verifySauceDemoApplication"/>
+                </methods>
+            </class>
+            <class name="testng.BeforeAndAfterMethodExample">
+                <methods>
+                    <include name="testCase1"/>
+                    <include name="testCase2"/>
+                    <include name="testCase3"/>
+                </methods>
+            </class>
+            <class name="testng.DependsOnGroupExample">
+                <methods>
+                    <include name="onboarding"/>
+                </methods>
+            </class>
+            <class name="testng.DependsOnMethodExample">
+                <methods>
+                    <include name="loginFunctionality"/>
+                    <include name="verifyHomePage"/>
+                    <include name="onboarding"/>
+                </methods>
+            </class>
+            <class name="testng.PriorityExample">
+                <methods>
+                    <include name="testCaseZ"/>
+                    <include name="testCaseA"/>
+                    <include name="testCaseM"/>
+                    <include name="testCaseG"/>
+                    <include name="testCaseC"/>
+                    <include name="testCaseS"/>
+                </methods>
+            </class>
+            <class name="testng.TestNGIntroduction">
+                <methods>
+                    <include name="EdsoServices"/>
+                    <include name="tataConsultancyServices"/>
+                </methods>
+            </class>
+            <class name="testng.TestNGInvocation">
+                <methods>
+                    <include name="repeatingTestCaseExample"/>
+                </methods>
+            </class>
+            <class name="testng.parameterization.DataProviderWithExcel">
+                <methods>
+                    <include name="searchOFMultipleCities"/>
+                </methods>
+            </class>
+            <class name="testng.parameterization.NeedOfParameterization">
+                <methods>
+                    <include name="searchOfMultipleCities"/>
+                </methods>
+            </class>
+            <class name="testng.parameterization.NormalDataProviderExample">
+                <methods>
+                    <include name="searchOFMultipleCities"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
