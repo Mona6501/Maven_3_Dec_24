@@ -24,6 +24,8 @@ public class NormalDataProviderExample {
         WebElement searchTextBox = driver.findElement(By.name("q"));
         searchTextBox.sendKeys("Java"+" "+"Mumbai");
         searchTextBox.sendKeys(Keys.ENTER);
+        driver.close();
+    
     }
 
 }
